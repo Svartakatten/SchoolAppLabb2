@@ -1,0 +1,9 @@
+﻿@model IEnumerable<SchoolAppLabb2.Models.Teacher>
+
+<h2>Teachers for Programming 1</h2>
+<ul>
+    @foreach (var teacher in Model)
+    {
+        <li>@teacher.Name</li>
+    }
+</ul>

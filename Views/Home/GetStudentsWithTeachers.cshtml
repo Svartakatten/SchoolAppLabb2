@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Student>
+
+<h2>Students with Teachers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Teachers</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>
+                    @if (student.StudentCourses.Any())
+                    {
+                        <ul>
+                            @foreach (var studentCourse in student.StudentCourses)
+                            {
+                                @if (studentCourse.Course.Teacher != null)
+
+                                {
+                                    <li>@studentCourse.Course.Teacher.Name</li>
+                                }
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No teachers assigned</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

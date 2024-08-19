@@ -1,0 +1,20 @@
+﻿@model SchoolAppLabb2.Models.EditCourseModel
+
+<h2>Edit Course Topic</h2>
+
+<form asp-action="EditCourseTopic" method="post">
+    <input type="hidden" asp-for="CourseId" />
+
+    <div class="form-group">
+        <label asp-for="OldCourseName" class="control-label">Old Course Name</label>
+        <input asp-for="OldCourseName" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NewCourseName" class="control-label">New Course Name</label>
+        <input asp-for="NewCourseName" class="form-control" />
+        <span asp-validation-for="NewCourseName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SchoolAppLabb2.Models.StudentTeacherViewModel>
+
+<h2>Students for Programming 1</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentName</td>
+                <td>@item.TeacherName</td>
+            </tr>
+        }
+    </tbody>
+</table>
